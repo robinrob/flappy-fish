@@ -13,6 +13,9 @@ var PlayScene = cc.Scene.extend({
 
     collisionRockBegin:function (arbiter, space) {
         cc.log("==game over");
+
+        cc.director.pause();
+        this.addChild(new GameOverLayer());
     },
 
     // init space of chipmunk
@@ -23,7 +26,6 @@ var PlayScene = cc.Scene.extend({
         this.space.gravity = cp.v(0, -350);
 
         // 3. set up Walls
-
         var wallBottom = new cp.SegmentShape(this.space.staticBody,
             cp.v(0, g_groundHeight),// start point
             cp.v(4294967295, g_groundHeight),// MAX INT:4294967295

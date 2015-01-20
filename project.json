@@ -1,7 +1,7 @@
 {
     "project_type": "javascript",
 
-    "debugMode" : 1,
+    "debugMode" : 0,
     "showFPS" : false,
     "frameRate" : 60,
     "id" : "gameCanvas",
@@ -19,6 +19,9 @@
         "src/PlayScene.js",
         "src/globals.js",
         "src/coin.js",
-        "src/rock.js"
+        "src/rock.js",
+        "src/GameOverLayer.js",
+        "src/SimpleRecognizer.js"
     ]
+
 }
