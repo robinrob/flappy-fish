@@ -2,6 +2,9 @@ var AnimationLayer = cc.Layer.extend({
     spriteSheet:null,
     runningAction:null,
     sprite:null,
+    space:null,
+    body:null,
+    shape:null,
 
     ctor:function (space) {
         this._super();
@@ -58,5 +61,11 @@ var AnimationLayer = cc.Layer.extend({
 
     getEyeX:function () {
         return this.sprite.getPositionX() - g_runnerStartX;
+    },
+
+    update:function (dt) {
+        // update meter
+        var statusLayer = this.getParent().getParent().getChildByTag(TagOfLayer.Status);
+        statusLayer.updateMeter(this.sprite.getPositionX() - g_runnerStartX);
     }
 });
