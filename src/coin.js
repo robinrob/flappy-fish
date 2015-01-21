@@ -16,6 +16,7 @@ var Coin = cc.Class.extend({
      * @param {cc.p}
      */
     ctor:function (spriteSheet, space, pos) {
+        cc.log("Coin.ctor ...")
         this.space = space;
 
         // init coin animation
@@ -50,6 +51,7 @@ var Coin = cc.Class.extend({
     },
 
     removeFromParent:function () {
+        cc.log("Coin.removeFromParent ...")
         this.space.removeStaticShape(this.shape);
         this.shape = null;
         this.sprite.removeFromParent();
@@ -57,6 +59,7 @@ var Coin = cc.Class.extend({
     },
 
     getShape:function () {
+        cc.log("Coin.getShape ...")
         return this.shape;
     }
 });

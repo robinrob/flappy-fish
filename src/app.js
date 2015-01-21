@@ -1,9 +1,11 @@
 var MenuLayer = cc.Layer.extend({
     ctor : function(){
+        cc.log("MenuLayer.ctor ...")
         //1. call super class's ctor function
         this._super();
     },
     init:function(){
+        cc.log("MenuLayer.init ...")
         //call super class's super function
         this._super();
 
@@ -32,13 +34,14 @@ var MenuLayer = cc.Layer.extend({
     },
 
     onPlay : function(){
-        cc.log("==onplay clicked, loading PlayScene ...");
+        cc.log("MenuLayer.onPlay ...")
         cc.director.runScene(new PlayScene());
     }
 });
 
 var MenuScene = cc.Scene.extend({
     onEnter:function () {
+        cc.log("MenuScene.onEnter ...")
         this._super();
         var layer = new MenuLayer();
         layer.init();

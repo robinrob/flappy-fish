@@ -3,6 +3,7 @@ var PlayScene = cc.Scene.extend({
     shapesToRemove :[],
 
     collisionCoinBegin:function (arbiter, space) {
+        cc.log("PlayScene.collisionCoinBegin ...")
         var shapes = arbiter.getShapes();
         // shapes[0] is runner
         this.shapesToRemove.push(shapes[1]);
@@ -12,6 +13,7 @@ var PlayScene = cc.Scene.extend({
     },
 
     collisionRockBegin:function (arbiter, space) {
+        cc.log("PlayScene.collisionRockBegin ...")
         cc.log("==game over");
 
         cc.director.pause();
@@ -20,6 +22,7 @@ var PlayScene = cc.Scene.extend({
 
     // init space of chipmunk
     initPhysics:function() {
+        cc.log("PlayScene.initPhysics ...")
         //1. new space object
         this.space = new cp.Space();
         //2. setup the  Gravity
@@ -45,6 +48,7 @@ var PlayScene = cc.Scene.extend({
     },
 
     onEnter:function () {
+        cc.log("PlayScene.onEnter ...")
         this._super();
         this.shapesToRemove = [];
         this.initPhysics();
@@ -60,6 +64,7 @@ var PlayScene = cc.Scene.extend({
     },
 
     update:function (dt) {
+        cc.log("PlayScene.update ...")
         // chipmunk step
         this.space.step(dt);
 

@@ -9,6 +9,7 @@ var BackgroundLayer = cc.Layer.extend({
     objects:[],
 
     ctor:function (space) {
+        cc.log("Background.cotr ...")
         this._super();
 
         // clean old array here
@@ -19,6 +20,7 @@ var BackgroundLayer = cc.Layer.extend({
     },
 
     init:function () {
+        cc.log("BackgroundLayer.init ...")
         this._super();
 //        var winsize = cc.director.getWinSize();
 //
@@ -47,6 +49,7 @@ var BackgroundLayer = cc.Layer.extend({
     },
 
     checkAndReload:function (eyeX) {
+        cc.log("BackgroundLayer.checkAndReload ...")
         var newMapIndex = parseInt(eyeX / this.mapWidth);
         if (this.mapIndex == newMapIndex) {
             return false;
@@ -67,6 +70,7 @@ var BackgroundLayer = cc.Layer.extend({
     },
 
     loadObjects:function (map, mapIndex) {
+        cc.log("BackgroundLayer.loadObjects ...")
         // add coins
         var coinGroup = map.getObjectGroup("coin");
         var coinArray = coinGroup.getObjects();
@@ -91,6 +95,7 @@ var BackgroundLayer = cc.Layer.extend({
     },
 
     removeObjects:function (mapIndex) {
+        cc.log("BackgroundLayer.removeObjects ...")
         while((function (obj, index) {
             for (var i = 0; i < obj.length; i++) {
                 if (obj[i].mapIndex == index) {
@@ -104,6 +109,7 @@ var BackgroundLayer = cc.Layer.extend({
     },
 
     removeObjectByShape:function (shape) {
+        cc.log("BackgroundLayer.removeObjectByShape ...")
         for (var i = 0; i < this.objects.length; i++) {
             if (this.objects[i].getShape() == shape) {
                 this.objects[i].removeFromParent();
@@ -114,6 +120,7 @@ var BackgroundLayer = cc.Layer.extend({
     },
 
     update:function (dt) {
+        cc.log("BackgroundLayer.update ...")
         var animationLayer = this.getParent().getChildByTag(TagOfLayer.Animation);
         var eyeX = animationLayer.getEyeX();
         this.checkAndReload(eyeX);

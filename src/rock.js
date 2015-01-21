@@ -3,6 +3,7 @@ var Rock = cc.Class.extend({
     sprite:null,
     shape:null,
     _map:0,// which map belong to
+
     get map() {
         return this._map;
     },
@@ -16,6 +17,7 @@ var Rock = cc.Class.extend({
      * @param {cc.p}
      */
     ctor:function (spriteSheet, space, posX) {
+        cc.log("Rock.ctor ...")
         this.space = space;
 
         this.sprite = new cc.PhysicsSprite("#rock.png");
@@ -33,6 +35,7 @@ var Rock = cc.Class.extend({
     },
 
     removeFromParent:function () {
+        cc.log("Rock.removeFromParent ...")
         this.space.removeStaticShape(this.shape);
         this.shape = null;
         this.sprite.removeFromParent();
@@ -40,6 +43,7 @@ var Rock = cc.Class.extend({
     },
 
     getShape:function () {
+        cc.log("Rock.getShape ...")
         return this.shape;
     }
 });

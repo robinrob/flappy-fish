@@ -4,11 +4,13 @@ var StatusLayer = cc.Layer.extend({
     coins:0,
 
     ctor:function () {
+        cc.log("StausLayer.ctor. ...")
         this._super();
         this.init();
     },
 
     init:function () {
+        cc.log("StausLayer.init ...")
         this._super();
 
         var winsize = cc.director.getWinSize();
@@ -24,10 +26,12 @@ var StatusLayer = cc.Layer.extend({
     },
 
     updateMeter:function (px) {
+        cc.log("StausLayer.updateMeter ...")
         this.labelMeter.setString(parseInt(px / 10) + "M");
     },
 
     addCoin:function (num) {
+        cc.log("StausLayer.addCoin ...")
         this.coins += num;
         this.labelCoin.setString("Coins:" + this.coins);
     }

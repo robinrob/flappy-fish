@@ -1,3 +1,4 @@
+cc.log("Setting resource variables ...")
 var res = {
     helloBG_png : "res/helloBG.png",
     start_n_png : "res/start_n.png",

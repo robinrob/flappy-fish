@@ -20,6 +20,7 @@ var AnimationLayer = cc.Layer.extend({
     jumpDownAction:null,
 
     ctor:function (space) {
+        cc.log("AnimationLayer.ctor ...")
         this._super();
         this.space = space;
         this.init();
@@ -31,6 +32,7 @@ var AnimationLayer = cc.Layer.extend({
     },
 
     init:function () {
+        cc.log("AnimationLayer.init ...")
         this._super();
 
         // create sprite sheet
@@ -84,6 +86,7 @@ var AnimationLayer = cc.Layer.extend({
     },
 
     onExit:function() {
+        cc.log("AnimationLayer.onExit ...")
         this.runningAction.release();
         if (this.jumpUpAction) {
             this.jumpUpAction.release();
@@ -96,6 +99,7 @@ var AnimationLayer = cc.Layer.extend({
     },
 
     initAction:function () {
+        cc.log("AnimationLayer.initAction ...")
         // init runningAction
         var animFrames = [];
         for (var i = 1; i < 4; i++) {
@@ -134,17 +138,20 @@ var AnimationLayer = cc.Layer.extend({
     },
 
     onTouchBegan:function(touch, event) {
+        cc.log("AnimationLayer.onTouchBegan ...")
         var pos = touch.getLocation();
         event.getCurrentTarget().recognizer.beginPoint(pos.x, pos.y);
         return true;
     },
 
     onTouchMoved:function(touch, event) {
+        cc.log("AnimationLayer.onTouchMoved ...")
         var pos = touch.getLocation();
         event.getCurrentTarget().recognizer.movePoint(pos.x, pos.y);
     },
 
     onTouchEnded:function(touch, event) {
+        cc.log("AnimationLayer.onTouchEnded ...")
         var rtn = event.getCurrentTarget().recognizer.endPoint();
         cc.log("rnt = " + rtn);
         switch (rtn) {
@@ -157,6 +164,7 @@ var AnimationLayer = cc.Layer.extend({
     },
 
     jump:function () {
+        cc.log("AnimationLayer.jump ...")
         cc.log("jump");
         if (this.stat == RunnerStat.running) {
             this.body.applyImpulse(cp.v(0, 250), cp.v(0, 0));
@@ -167,10 +175,12 @@ var AnimationLayer = cc.Layer.extend({
     },
 
     getEyeX:function () {
+        cc.log("AnimationLayer.getEyeX ...")
         return this.sprite.getPositionX() - g_runnerStartX;
     },
 
     update:function (dt) {
+        cc.log("AnimationLayer.update ...")
         // update meter
         var statusLayer = this.getParent().getParent().getChildByTag(TagOfLayer.Status);
         statusLayer.updateMeter(this.sprite.getPositionX() - g_runnerStartX);
