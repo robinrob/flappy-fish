@@ -70,6 +70,7 @@ var AnimationLayer = cc.Layer.extend({
         //8. set body to the physic sprite
         this.sprite.setBody(this.body);
 
+        this.initAction()
         this.sprite.runAction(this.runningAction);
 
         this.spriteSheet.addChild(this.sprite);
@@ -88,7 +89,7 @@ var AnimationLayer = cc.Layer.extend({
     onExit:function() {
         cc.log("AnimationLayer.onExit ...")
         this.runningAction.release();
-        if (this.jumpUpAction) {
+        if (this.jumpUpAction) {i
             this.jumpUpAction.release();
         }
         if (this.jumpDownAction) {

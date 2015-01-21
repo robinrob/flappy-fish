@@ -49,7 +49,7 @@
 
 
 cc.game.onStart = function(){
-    cc.log("==onplay clicked, loading PlayScene ...");
+    cc.log("cc.game.onStart ...");
     cc.view.adjustViewPort(true);
     cc.view.setDesignResolutionSize(320, 480, cc.ResolutionPolicy.SHOW_ALL);
     // E.g. when device rotated
@@ -58,6 +58,5 @@ cc.game.onStart = function(){
     cc.LoaderScene.preload(g_resources, function () {
         cc.director.runScene(new MenuScene());
     }, this);
-    cc.log("===loaded")
 };
 cc.game.run();
