@@ -14,7 +14,10 @@ var res = {
     background_png :"res/background.png",
     background_plist : "res/background.plist",
     restart_n_png : "res/restart_n.png",
-    restart_s_png : "res/restart_s.png"
+    restart_s_png : "res/restart_s.png",
+    music_background : "res/background.ogg",
+    music_jump : "res/jump.ogg",
+    music_pickup_coin : "res/pickup_coin.ogg"
 };
 
 var g_resources = [];

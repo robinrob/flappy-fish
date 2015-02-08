@@ -89,7 +89,7 @@ var AnimationLayer = cc.Layer.extend({
     onExit:function() {
         cc.log("AnimationLayer.onExit ...")
         this.runningAction.release();
-        if (this.jumpUpAction) {i
+        if (this.jumpUpAction) {
             this.jumpUpAction.release();
         }
         if (this.jumpDownAction) {
@@ -171,6 +171,10 @@ var AnimationLayer = cc.Layer.extend({
             this.body.applyImpulse(cp.v(0, 250), cp.v(0, 0));
             this.stat = RunnerStat.jumpUp;
             this.sprite.stopAllActions();
+            //add the jumping audio effect in *jump* method of AnimationLayer
+            //stop bg music
+            var audioEngine = cc.AudioEngine.getInstance();
+            audioEngine.playEffect(s_music_jump);
             this.sprite.runAction(this.jumpUpAction);
         }
     },
