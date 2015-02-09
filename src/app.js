@@ -32,9 +32,9 @@ var MenuLayer = cc.Layer.extend({
         menu.setPosition(centerpos);
         this.addChild(menu);
 
-        cc.audioEngine.preloadMusic(res.music_background);
-        cc.audioEngine.preloadEffect(res.music_jump);
-        cc.audioEngine.preloadEffect(res.music_pickup_coin);
+        //cc.audioEngine.preloadMusic(res.music_background);
+        //cc.audioEngine.preloadEffect(res.music_jump);
+        //cc.audioEngine.preloadEffect(res.music_pickup_coin);
     },
 
     onPlay : function(){

@@ -9,8 +9,7 @@ var PlayScene = cc.Scene.extend({
         this.shapesToRemove.push(shapes[1]);
 
         //add the collect coin audio effect in *collisionCoinBegin* method of PlayScene
-        var audioEngine = cc.AudioEngine.getInstance();
-        audioEngine.playEffect(s_music_pickup_coin);
+        cc.audioEngine.playEffect(res.music_pickup_coin);
 
         var statusLayer = this.getChildByTag(TagOfLayer.Status);
         statusLayer.addCoin(1);
@@ -21,8 +20,7 @@ var PlayScene = cc.Scene.extend({
         cc.log("==game over");
 
         //stop bg music
-        var audioEngine = cc.AudioEngine.getInstance();
-        audioEngine.stopMusic();
+        cc.audioEngine.stopMusic();
 
         cc.director.pause();
         this.addChild(new GameOverLayer());
@@ -69,8 +67,7 @@ var PlayScene = cc.Scene.extend({
         this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
 
         //add background music
-        var audioEngine = cc.AudioEngine.getInstance();
-        audioEngine.playMusic(s_music_background, true);
+        cc.audioEngine.playMusic(res.music_background, true);
 
         this.scheduleUpdate();
     },
