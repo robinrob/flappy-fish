@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>3.6.0</string>
         <key>fileName</key>
-        <string>/Users/msl/Programming/robin/javascript/projects/Parkour/res/Parkour.tps</string>
+        <string>/Users/msl/Programming/robin/javascript/projects/FlappyFish/res/FlappyFish.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
