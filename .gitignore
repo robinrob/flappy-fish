@@ -1,7 +1,12 @@
-frameworks
 .idea
 .DS_Store
 tools
 runtime
+frameworks/*
+!frameworks/cocos2d-html5
+frameworks/cocos2d-html5/*
+!frameworks/cocos2d-html5/external
+frameworks/cocos2d-html5/external/*
+!frameworks/cocos2d-html5/external/chipmunk
 frameworks/cocos2d-html5/external/chipmunk/*
 !frameworks/cocos2d-html5/external/chipmunk/chipmunk.js
