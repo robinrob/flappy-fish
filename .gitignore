@@ -3,3 +3,5 @@ frameworks
 .DS_Store
 tools
 runtime
+frameworks/cocos2d-html5/external/chipmunk/*
+!frameworks/cocos2d-html5/external/chipmunk/chipmunk.js
