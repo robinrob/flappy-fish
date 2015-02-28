@@ -1568,13 +1568,14 @@ var Body = cp.Body = function(m, i) {
 };
 
 // I wonder if this should use the constructor style like Body...
-var createStaticBody = cp.StaticBody = function(body)
+var createStaticBody = function()
 {
 	var body = new Body(Infinity, Infinity);
 	body.nodeIdleTime = Infinity;
 
 	return body;
 };
+    cp.StaticBody = createStaticBody;
 
 if (typeof DEBUG !== 'undefined' && DEBUG) {
 	var v_assert_nan = function(v, message){assert(v.x == v.x && v.y == v.y, message); };
