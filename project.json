@@ -11,17 +11,18 @@
     "modules" : ["cocos2d","chipmunk"],
 
     "jsList" : [
-        "src/resource.js",
-        "src/app.js",
         "src/AnimationLayer.js",
         "src/BackgroundLayer.js",
-        "src/StatusLayer.js",
-        "src/PlayScene.js",
-        "src/globals.js",
-        "src/coin.js",
-        "src/rock.js",
+        "src/Coin.js",
         "src/GameOverLayer.js",
-        "src/SimpleRecognizer.js"
+        "src/globals.js",
+        "src/MenuLayer.js",
+        "src/MenuScene.js",
+        "src/PlayScene.js",
+        "src/resource.js",
+        "src/Rock.js",
+        "src/SimpleRecognizer.js",
+        "src/StatusLayer.js"
     ]
 
 }
