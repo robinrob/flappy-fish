@@ -1,6 +1,7 @@
 .idea
 .DS_Store
 runtime
+tools
 frameworks/*
 !frameworks/runtime-src
 frameworks/runtime-src/*
