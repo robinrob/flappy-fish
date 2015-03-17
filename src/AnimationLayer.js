@@ -40,18 +40,6 @@ var AnimationLayer = cc.Layer.extend({
         this.spriteSheet = new cc.SpriteBatchNode(res.fish_png);
         this.addChild(this.spriteSheet);
 
-
-        // init runningAction
-//        var animFrames = [];
-//        for (var i = 1; i < 4; i++) {
-//            var str = "fish" + i + ".png";
-//            var frame = cc.spriteFrameCache.getSpriteFrame(str);
-//            animFrames.push(frame);
-//        }
-//
-//        var animation = new cc.Animation(animFrames, 0.1);
-//        this.runningAction = new cc.RepeatForever(new cc.Animate(animation));
-
         //1. create PhysicsSprite with a sprite frame name
         this.sprite = new cc.PhysicsSprite("#fish1.png");
         var contentSize = this.sprite.getContentSize();
