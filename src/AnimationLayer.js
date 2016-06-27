@@ -176,7 +176,7 @@ var AnimationLayer = cc.Layer.extend({
         cc.log("AnimationLayer.update ...")
         // update meter
         var statusLayer = this.getParent().getParent().getChildByTag(TagOfLayer.Status);
-        statusLayer.updateMeter(this.sprite.getPositionX() - g_runnerStartX);
+        //statusLayer.updateMeter(this.sprite.getPositionX() - g_runnerStartX);
 
         //in the update method of AnimationLayer
         // check and update runner stat

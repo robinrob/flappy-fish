@@ -1,7 +1,7 @@
 {
     "project_type": "javascript",
 
-    "debugMode" : 1,
+    "debugMode" : 0,
     "showFPS" : false,
     "frameRate" : 60,
     "id" : "gameCanvas",
@@ -11,6 +11,7 @@
     "modules" : ["cocos2d","chipmunk"],
 
     "jsList" : [
+        "src/functions.js",
         "src/AnimationLayer.js",
         "src/BackgroundLayer.js",
         "src/Coin.js",
