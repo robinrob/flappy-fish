@@ -1,0 +1,14 @@
+{
+  "name": "orbiter-lite",
+  "description": "Space orbiter game",
+  "version": "1.0.0",
+  "dependencies": {
+    "gulp": "",
+    "gulp-uglify": "",
+    "gulp-concat": "",
+    "browser-sync": ""
+  },
+  "devDependencies": {
+    "lodash": "^4.13.1"
+  }
+}

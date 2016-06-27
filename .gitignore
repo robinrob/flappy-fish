@@ -2,9 +2,13 @@
 .DS_Store
 runtime
 tools
+node_modules
+
 frameworks/*
 !frameworks/runtime-src
 frameworks/runtime-src/*
 !frameworks/runtime-src/proj.android
 frameworks/runtime-src/proj.android/*
 !frameworks/runtime-src/proj.android/AndroidManifest.xml
+
+simulator
