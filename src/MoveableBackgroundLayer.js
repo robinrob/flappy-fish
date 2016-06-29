@@ -42,13 +42,13 @@ var MoveableBackgroundLayer = cc.Layer.extend({
         if (newX1 < left.x) {
             this.spriteBG1.setPosition(rss.p.addX(pos2, width - movement - 1))
         } else {
-            this.spriteBG1.setPosition(rss.p.subX(pos1, movement))
+            //this.spriteBG1.setPosition(rss.p.subX(pos1, movement))
         }
 
         if (newX2 < left.x) {
             this.spriteBG2.setPosition(rss.p.addX(pos1, width - movement - 1))
         } else {
-            this.spriteBG2.setPosition(rss.p.subX(pos2, movement))
+            //this.spriteBG2.setPosition(rss.p.subX(pos2, movement))
         }
     }
 })

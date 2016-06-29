@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="32" tileheight="32" nextobjectid="41">
+<map version="1.0" orientation="orthogonal" width="20" height="10" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="map" tilewidth="32" tileheight="32">
   <image source="map.png" width="128" height="128"/>
  </tileset>
- <layer name="background" width="20" height="10">
+ <layer name="background" width="20" height="10" opacity="0">
   <data encoding="base64" compression="zlib">
    eJztyzkKACAQBMFd7wP9/3PtcBJjE4NioGGmmc3ve6RjICLBEWRv3eWrfWGjoiGjyN56lq/2AzHrB70=
   </data>
@@ -13,16 +13,14 @@
    eJxjYBgFo4B4wA/EAlSkBzsAAPeoATc=
   </data>
  </layer>
- <objectgroup name="coin">
-  <object id="20" type="coin" x="404" y="64" width="25" height="26"/>
-  <object id="22" type="coin" x="443" y="100" width="25" height="26"/>
-  <object id="23" type="coin" x="412" y="140" width="25" height="26"/>
-  <object id="24" type="coin" x="433" y="188" width="25" height="26"/>
-  <object id="25" type="coin" x="362" y="143" width="25" height="26"/>
-  <object id="26" type="coin" x="362" y="186" width="25" height="26"/>
-  <object id="27" type="coin" x="360" y="92" width="25" height="26"/>
-  <object id="30" type="rock" x="183.948" y="205.038" width="38.6643" height="32.8061"/>
-  <object id="31" type="rock" x="570.592" y="203.866" width="38.6643" height="32.8061"/>
+ <objectgroup name="coin" width="0" height="0">
+  <object type="coin" x="404" y="64" width="25" height="26"/>
+  <object type="coin" x="443" y="100" width="25" height="26"/>
+  <object type="coin" x="412" y="140" width="25" height="26"/>
+  <object type="coin" x="433" y="188" width="25" height="26"/>
+  <object type="coin" x="362" y="143" width="25" height="26"/>
+  <object type="coin" x="362" y="186" width="25" height="26"/>
+  <object type="coin" x="360" y="92" width="25" height="26"/>
  </objectgroup>
- <objectgroup name="rock"/>
+ <objectgroup name="rock" width="0" height="0"/>
 </map>
