@@ -12,7 +12,7 @@ var PlayScene = cc.Scene.extend({
         cc.audioEngine.playEffect(res.music_pickup_coin);
 
         var statusLayer = this.getChildByTag(TagOfLayer.Status);
-        statusLayer.addCoin(1);
+        //statusLayer.addCoin(1);
     },
 
     collisionRockBegin:function (arbiter, space) {
@@ -63,10 +63,17 @@ var PlayScene = cc.Scene.extend({
         //add Background layer and Animation layer to gameLayer
         this.gameLayer.addChild(new BackgroundLayer(this.space), 0, TagOfLayer.background);
         this.gameLayer.addChild(new AnimationLayer(this.space), 0, TagOfLayer.Animation);
+        this.gameLayer.setPosition(0, rss.center().y - 159)
 
+        var pos = this.gameLayer.getChildByTag(TagOfLayer.Animation).getPosition()
+        console.log('pos: ' + JSON.stringify(pos, null, '\t'))
         this.addChild(this.gameLayer);
-        this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
-        this.getChildByTag(TagOfLayer.Status).setPosition(rss.center())
+
+        //this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
+
+        this.spriteBG1 = cc.Sprite.create(res.PlayBG_png)
+        this.spriteBG1.setPosition(rss.center());
+        this.addChild(this.spriteBG1, -1);
 
         //add background music
         cc.audioEngine.playMusic(res.music_background, true);
@@ -83,7 +90,7 @@ var PlayScene = cc.Scene.extend({
         animationLayer.update(dt);
         var eyeX = animationLayer.getEyeX();
 
-        this.gameLayer.setPosition(cc.p(-eyeX,rss.center().y - this.gameLayer.height / 4));
+        this.gameLayer.setPositionX(-eyeX)
 
         // Simulation cpSpaceAddPostStepCallback
         for(var i = 0; i < this.shapesToRemove.length; i++) {

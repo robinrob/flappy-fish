@@ -12,7 +12,7 @@ var MenuLayer = cc.Layer.extend({
         //2. get the screen size of your game canvas
         var winsize = cc.director.getWinSize();
 
-        //4. create a background image and set it's position at the center of the screen
+        //4. create a background image and set its position at the center of the screen
         var spritebg = new cc.Sprite(res.helloBG_png);
         spritebg.setPosition(rss.center());
         this.addChild(spritebg);

@@ -25,10 +25,10 @@ var AnimationLayer = cc.Layer.extend({
         this.space = space;
         this.init();
 
-        this._debugNode = new cc.PhysicsDebugNode(this.space);
-        this._debugNode.setVisible(false);
+        //this._debugNode = new cc.PhysicsDebugNode(this.space);
+        //this._debugNode.setVisible(true);
         // Parallax ratio and offset
-        this.addChild(this._debugNode, 10);
+        //this.addChild(this._debugNode, 10);
     },
 
     init:function () {
@@ -207,7 +207,7 @@ var AnimationLayer = cc.Layer.extend({
     update:function (dt) {
         cc.log("AnimationLayer.update ...")
         // update meter
-        var statusLayer = this.getParent().getParent().getChildByTag(TagOfLayer.Status);
+        //var statusLayer = this.getParent().getParent().getChildByTag(TagOfLayer.Status);
         //statusLayer.updateMeter(this.sprite.getPositionX() - g_runnerStartX);
 
         //in the update method of AnimationLayer

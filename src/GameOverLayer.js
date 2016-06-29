@@ -24,6 +24,6 @@ var GameOverLayer = cc.LayerColor.extend({
     onRestart:function () {
         cc.log("GameOver.onRestart ...")
         cc.director.resume();
-        cc.director.runScene(new MenuScene());
+        cc.director.runScene(new PlayScene());
     }
 });

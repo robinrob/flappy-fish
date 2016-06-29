@@ -13,16 +13,14 @@ var StatusLayer = cc.Layer.extend({
         cc.log("StatusLayer.init ...")
         this._super();
 
-        var winsize = cc.director.getWinSize();
-
         this.labelCoin = new cc.LabelTTF("Coins:0", "Helvetica", 20);
         this.labelCoin.setColor(rss.colors.white);
-        this.labelCoin.setPosition(cc.p(70, rss.center().y - 80));
+        this.labelCoin.setPosition(rss.center().x - 180, rss.center().y + 120);
         this.addChild(this.labelCoin);
 
         this.labelMeter = new cc.LabelTTF("0m", "Helvetica", 20);
         this.labelMeter.setColor(rss.colors.white);
-        this.labelMeter.setPosition(cc.p(420, rss.center().y - 80));
+        this.labelMeter.setPosition(rss.center().x + 180, rss.center().y + 120);
         this.addChild(this.labelMeter);
     },
 
