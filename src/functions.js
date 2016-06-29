@@ -357,6 +357,10 @@ rss.upInput = function() {
     return rss.keys[cc.KEY.w] || rss.keys[cc.KEY.up]
 }
 
+rss.isUpInput = function(key) {
+    return (key == cc.KEY.w) || (key == cc.KEY.up)
+}
+
 rss.downInput = function() {
     return rss.keys[cc.KEY.s] || rss.keys[cc.KEY.down]
 }
@@ -483,7 +487,7 @@ rss.pause = function() {
 }
 
 rss.resume = function() {
-    rss.playMusic()
+    rss.playMusic(rss.res.music)
     cc.director.resume()
 }
 

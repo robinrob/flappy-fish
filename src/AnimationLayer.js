@@ -71,7 +71,41 @@ var AnimationLayer = cc.Layer.extend({
             onTouchEnded: this.onTouchEnded
         }, this)
 
+        var that = this
+
+        cc.eventManager.addListener(cc.EventListener.create({
+            event: cc.EventListener.KEYBOARD,
+            onKeyPressed: this.keyPressed,
+            onKeyReleased: this.keyReleased.bind(that),
+        }), that)
+
         this.recognizer = new SimpleRecognizer();
+    },
+
+    keyPressed: function(key) {
+        cc.log('keyPressed ...')
+        if (key == cc.KEY.p) {
+            rss.keys[key] = !rss.keys[key];
+
+            if (rss.keys[key]) {
+                rss.pause()
+            } else {
+                rss.resume()
+            }
+        } else {
+            rss.keys[key] = true
+        }
+    },
+
+    keyReleased: function(key) {
+        cc.log('keyReleased ...')
+        if (rss.upInput()) {
+            this.jump()
+        }
+
+        if (key != cc.KEY.p) {
+            rss.keys[key] = false;
+        }
     },
 
     onExit:function() {
@@ -152,17 +186,15 @@ var AnimationLayer = cc.Layer.extend({
         }
     },
 
-    jump:function () {
+    jump: function () {
         cc.log("AnimationLayer.jump ...")
-        cc.log("jump");
         if (this.stat == RunnerStat.running) {
             this.body.applyImpulse(cp.v(0, 250), cp.v(0, 0));
             this.stat = RunnerStat.jumpUp;
             this.sprite.stopAllActions();
             //add the jumping audio effect in *jump* method of AnimationLayer
             //stop bg music
-            var audioEngine = cc.AudioEngine.getInstance();
-            audioEngine.playEffect(s_music_jump);
+            cc.audioEngine.playEffect(res.music_jump);
             this.sprite.runAction(this.jumpUpAction);
         }
     },

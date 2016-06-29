@@ -16,18 +16,19 @@ var StatusLayer = cc.Layer.extend({
         var winsize = cc.director.getWinSize();
 
         this.labelCoin = new cc.LabelTTF("Coins:0", "Helvetica", 20);
-        this.labelCoin.setColor(cc.color(0,0,0));//black color
-        this.labelCoin.setPosition(cc.p(70, winsize.height - 180));
+        this.labelCoin.setColor(rss.colors.white);
+        this.labelCoin.setPosition(cc.p(70, rss.center().y - 80));
         this.addChild(this.labelCoin);
 
-        this.labelMeter = new cc.LabelTTF("0M", "Helvetica", 20);
-        this.labelMeter.setPosition(cc.p(winsize.width - 70, winsize.height - 120));
+        this.labelMeter = new cc.LabelTTF("0m", "Helvetica", 20);
+        this.labelMeter.setColor(rss.colors.white);
+        this.labelMeter.setPosition(cc.p(420, rss.center().y - 80));
         this.addChild(this.labelMeter);
     },
 
     updateMeter:function (px) {
         cc.log("StatusLayer.updateMeter ...")
-        this.labelMeter.setString(parseInt(px / 10) + "M");
+        this.labelMeter.setString(parseInt(px / 10) + "m");
     },
 
     addCoin:function (num) {

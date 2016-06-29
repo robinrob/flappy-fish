@@ -22,19 +22,20 @@ var BackgroundLayer = cc.Layer.extend({
     init:function () {
         cc.log("BackgroundLayer.init ...")
         this._super();
-//        var winsize = cc.director.getWinSize();
-//
-//        //create the background image and position it at the center of screen
-//        var centerPos = cc.p(winsize.width / 2, winsize.height / 2);
-//        var spriteBG = new cc.Sprite(res.PlayBG_png);
-//        spriteBG.setPosition(centerPos);
-//        this.addChild(spriteBG);
+
+        //create the background image and position it at the center of screen
+        this.movingBG = new MoveableBackgroundLayer(res.PlayBG_png)
+        this.movingBG.setPosition(rss.center())
+        this.movingBG.init()
+        this.addChild(this.movingBG, -1)
 
         this.map00 = new cc.TMXTiledMap(res.map00_tmx);
+        this.map00.setOpacity(0.5)
         this.addChild(this.map00);
         this.mapWidth = this.map00.getContentSize().width;
         this.map01 = new cc.TMXTiledMap(res.map01_tmx);
         this.map01.setPosition(cc.p(this.mapWidth, 0));
+        this.map01.setOpacity(0.5)
         this.addChild(this.map01);
 
         // create sprite sheet

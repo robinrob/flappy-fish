@@ -16,3 +16,13 @@ if(typeof SpriteTag == "undefined") {
     SpriteTag.coin = 1;
     SpriteTag.rock = 2;
 };
+
+rss.keys = {}
+
+rss.config = {
+    mute: false
+}
+
+rss.res = {
+    music: "res/background.ogg"
+}

@@ -63,8 +63,15 @@ var PlayScene = cc.Scene.extend({
         //add Background layer and Animation layer to gameLayer
         this.gameLayer.addChild(new BackgroundLayer(this.space), 0, TagOfLayer.background);
         this.gameLayer.addChild(new AnimationLayer(this.space), 0, TagOfLayer.Animation);
+        //this.gameLayer.setPosition(rss.center())
+        var x = rss.center().x - this.gameLayer.width / 4
+        var y = rss.center().y - this.gameLayer.height / 4
+        //this.gameLayer.getChildByTag(TagOfLayer.Animation).setPosition(cc.p(x,y));
+        //this.gameLayer.getChildByTag(TagOfLayer.background).setPosition(cc.p(x,y));
+
         this.addChild(this.gameLayer);
         this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
+        this.getChildByTag(TagOfLayer.Status).setPosition(rss.center())
 
         //add background music
         cc.audioEngine.playMusic(res.music_background, true);
@@ -81,7 +88,7 @@ var PlayScene = cc.Scene.extend({
         animationLayer.update(dt);
         var eyeX = animationLayer.getEyeX();
 
-        this.gameLayer.setPosition(cc.p(-eyeX,0));
+        this.gameLayer.setPosition(cc.p(-eyeX,rss.center().y - this.gameLayer.height / 4));
 
         // Simulation cpSpaceAddPostStepCallback
         for(var i = 0; i < this.shapesToRemove.length; i++) {

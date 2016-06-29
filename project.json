@@ -12,8 +12,10 @@
 
     "jsList" : [
         "src/functions.js",
+        "src/constants.js",
         "src/AnimationLayer.js",
         "src/BackgroundLayer.js",
+        "src/MoveableBackgroundLayer.js",
         "src/Coin.js",
         "src/GameOverLayer.js",
         "src/globals.js",
@@ -25,5 +27,4 @@
         "src/SimpleRecognizer.js",
         "src/StatusLayer.js"
     ]
-
 }
