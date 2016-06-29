@@ -12,7 +12,7 @@ var PlayScene = cc.Scene.extend({
         cc.audioEngine.playEffect(res.music_pickup_coin);
 
         var statusLayer = this.getChildByTag(TagOfLayer.Status);
-        //statusLayer.addCoin(1);
+        statusLayer.addCoin(1);
     },
 
     collisionRockBegin:function (arbiter, space) {
@@ -66,10 +66,9 @@ var PlayScene = cc.Scene.extend({
         this.gameLayer.setPosition(0, rss.center().y - 159)
 
         var pos = this.gameLayer.getChildByTag(TagOfLayer.Animation).getPosition()
-        console.log('pos: ' + JSON.stringify(pos, null, '\t'))
         this.addChild(this.gameLayer);
 
-        //this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
+        this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
 
         this.spriteBG1 = cc.Sprite.create(res.PlayBG_png)
         this.spriteBG1.setPosition(rss.center());
