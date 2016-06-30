@@ -26,7 +26,7 @@ var AnimationLayer = cc.Layer.extend({
         this.init();
 
         this._debugNode = new cc.PhysicsDebugNode(this.space);
-        this._debugNode.setVisible(true);
+        this._debugNode.setVisible(false);
         // Parallax ratio and offset
         this.addChild(this._debugNode, 10);
     },
@@ -46,7 +46,7 @@ var AnimationLayer = cc.Layer.extend({
         // 2. init the runner physic body
         this.body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
         //3. set the position of the runner
-        this.body.p = cc.p(g_runnerStartX, g_groundHeight + contentSize.height / 2);
+        this.body.setPos(cc.p(g_runnerStartX, g_groundHeight + contentSize.height / 2 + 50))
         //4. apply impulse to the body
         this.body.applyImpulse(cp.v(150, 0), cp.v(0, 0));//run speed
         //5. add the created body to space
