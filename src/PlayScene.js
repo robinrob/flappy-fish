@@ -65,7 +65,6 @@ var PlayScene = cc.Scene.extend({
         this.gameLayer.addChild(new AnimationLayer(this.space), 0, TagOfLayer.Animation);
         this.gameLayer.setPosition(0, rss.center().y - 159)
 
-        var pos = this.gameLayer.getChildByTag(TagOfLayer.Animation).getPosition()
         this.addChild(this.gameLayer);
 
         this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
