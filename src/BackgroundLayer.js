@@ -69,26 +69,26 @@ var BackgroundLayer = cc.Layer.extend({
     loadObjects:function (map, mapIndex) {
         cc.log("BackgroundLayer.loadObjects ...")
         // add coins
-        //var coinGroup = map.getObjectGroup("coin");
-        //var coinArray = coinGroup.getObjects();
-        //for (var i = 0; i < coinArray.length; i++) {
-        //    var coin = new Coin(this.spriteSheet,
-        //        this.space,
-        //        cc.p(coinArray[i]["x"] + this.mapWidth * mapIndex,coinArray[i]["y"]));
-        //    coin.mapIndex = mapIndex;
-        //    this.objects.push(coin);
-        //}
-        //
-        //// add rock
-        //var rockGroup = map.getObjectGroup("rock");
-        //var rockArray = rockGroup.getObjects();
-        //for (var i = 0; i < rockArray.length; i++) {
-        //    var rock = new Rock(this.spriteSheet,
-        //        this.space,
-        //            rockArray[i]["x"] + this.mapWidth * mapIndex);
-        //    rock.mapIndex = mapIndex;
-        //    this.objects.push(rock);
-        //}
+        var coinGroup = map.getObjectGroup("coin");
+        var coinArray = coinGroup.getObjects();
+        for (var i = 0; i < coinArray.length; i++) {
+            var coin = new Coin(this.spriteSheet,
+                this.space,
+                cc.p(coinArray[i]["x"] + this.mapWidth * mapIndex,coinArray[i]["y"]));
+            coin.mapIndex = mapIndex;
+            this.objects.push(coin);
+        }
+
+        // add rock
+        var rockGroup = map.getObjectGroup("rock");
+        var rockArray = rockGroup.getObjects();
+        for (var i = 0; i < rockArray.length; i++) {
+            var rock = new Rock(this.spriteSheet,
+                this.space,
+                    rockArray[i]["x"] + this.mapWidth * mapIndex);
+            rock.mapIndex = mapIndex;
+            this.objects.push(rock);
+        }
     },
 
     removeObjects:function (mapIndex) {

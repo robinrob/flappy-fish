@@ -25,10 +25,10 @@ var AnimationLayer = cc.Layer.extend({
         this.space = space;
         this.init();
 
-        //this._debugNode = new cc.PhysicsDebugNode(this.space);
-        //this._debugNode.setVisible(true);
+        this._debugNode = new cc.PhysicsDebugNode(this.space);
+        this._debugNode.setVisible(true);
         // Parallax ratio and offset
-        //this.addChild(this._debugNode, 10);
+        this.addChild(this._debugNode, 10);
     },
 
     init:function () {
@@ -48,7 +48,7 @@ var AnimationLayer = cc.Layer.extend({
         //3. set the position of the runner
         this.body.p = cc.p(g_runnerStartX, g_groundHeight + contentSize.height / 2);
         //4. apply impulse to the body
-        this.body.applyImpulse(cp.v(300, 0), cp.v(0, 0));//run speed
+        this.body.applyImpulse(cp.v(150, 0), cp.v(0, 0));//run speed
         //5. add the created body to space
         this.space.addBody(this.body);
         //6. create the shape for the body

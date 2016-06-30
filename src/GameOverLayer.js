@@ -9,7 +9,6 @@ var GameOverLayer = cc.LayerColor.extend({
     init:function () {
         cc.log("GameOver.init ...")
         this._super(cc.color(0, 0, 0, 180));
-        var winSize = cc.director.getWinSize();
 
         cc.MenuItemFont.setFontSize(30);
         var menuItemRestart = new cc.MenuItemSprite(

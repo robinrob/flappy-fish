@@ -74,10 +74,25 @@ var PlayScene = cc.Scene.extend({
         this.spriteBG1.setPosition(rss.center());
         this.addChild(this.spriteBG1, -1);
 
+        cc.MenuItemFont.setFontSize(30);
+        var menuItemRestart = new cc.MenuItemSprite(
+            new cc.Sprite(res.restart_n_png),
+            new cc.Sprite(res.restart_s_png),
+            this.onRestart, this);
+        var menu = new cc.Menu(menuItemRestart);
+        menu.setPosition(rss.center());
+        this.addChild(menu);
+
         //add background music
         cc.audioEngine.playMusic(res.music_background, true);
 
         this.scheduleUpdate();
+    },
+
+    onRestart:function () {
+        cc.log("GameOver.onRestart ...")
+        cc.director.resume();
+        cc.director.runScene(new PlayScene());
     },
 
     update:function (dt) {

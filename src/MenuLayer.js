@@ -9,9 +9,6 @@ var MenuLayer = cc.Layer.extend({
         //call super class's super function
         this._super();
 
-        //2. get the screen size of your game canvas
-        var winsize = cc.director.getWinSize();
-
         //4. create a background image and set its position at the center of the screen
         var spritebg = new cc.Sprite(res.helloBG_png);
         spritebg.setPosition(rss.center());
@@ -29,9 +26,9 @@ var MenuLayer = cc.Layer.extend({
         menu.setPosition(rss.center());
         this.addChild(menu);
 
-        //cc.audioEngine.preloadMusic(res.music_background);
-        //cc.audioEngine.preloadEffect(res.music_jump);
-        //cc.audioEngine.preloadEffect(res.music_pickup_coin);
+        cc.audioEngine.preloadMusic(res.music_background);
+        cc.audioEngine.preloadEffect(res.music_jump);
+        cc.audioEngine.preloadEffect(res.music_pickup_coin);
     },
 
     onPlay : function(){

@@ -1,4 +1,4 @@
-var Rock = cc.Class.extend({
+var Rock = cc.Node.extend({
     space:null,
     sprite:null,
     shape:null,
@@ -18,6 +18,8 @@ var Rock = cc.Class.extend({
      */
     ctor:function (spriteSheet, space, posX) {
         cc.log("Rock.ctor ...")
+        this._super()
+
         this.space = space;
 
         this.sprite = new cc.PhysicsSprite("#rock.png");
@@ -36,7 +38,7 @@ var Rock = cc.Class.extend({
 
     removeFromParent:function () {
         cc.log("Rock.removeFromParent ...")
-        this.space.removeStaticShape(this.shape);
+        this.space.removeShape(this.shape);
         this.shape = null;
         this.sprite.removeFromParent();
         this.sprite = null;

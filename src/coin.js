@@ -1,4 +1,4 @@
-var Coin = cc.Class.extend({
+var Coin = cc.Node.extend({
     space:null,
     sprite:null,
     shape:null,
@@ -17,6 +17,8 @@ var Coin = cc.Class.extend({
      */
     ctor:function (spriteSheet, space, pos) {
         cc.log("Coin.ctor ...")
+        this._super()
+
         this.space = space;
 
         // init coin animation
@@ -52,7 +54,7 @@ var Coin = cc.Class.extend({
 
     removeFromParent:function () {
         cc.log("Coin.removeFromParent ...")
-        this.space.removeStaticShape(this.shape);
+        this.space.removeShape(this.shape);
         this.shape = null;
         this.sprite.removeFromParent();
         this.sprite = null;
