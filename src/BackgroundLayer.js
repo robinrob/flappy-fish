@@ -30,13 +30,13 @@ var BackgroundLayer = cc.Layer.extend({
 
         this.map00 = new cc.TMXTiledMap(res.map00_tmx);
         this.map00.setOpacity(0.5)
-        this.map00.setPositionX(this.mapWidth, -400)
+        this.map00.setPositionX(this.mapWidth)
         this.addChild(this.map00);
         this.mapWidth = this.map00.getContentSize().width;
         this.map01 = new cc.TMXTiledMap(res.map01_tmx);
         this.map01.setOpacity(0.5)
         this.addChild(this.map01);
-        this.map01.setPositionX(this.mapWidth, -400)
+        this.map01.setPositionX(this.mapWidth)
 
         this.loadObjects(this.map00, 0);
         this.loadObjects(this.map01, 1);
@@ -69,26 +69,26 @@ var BackgroundLayer = cc.Layer.extend({
     loadObjects:function (map, mapIndex) {
         cc.log("BackgroundLayer.loadObjects ...")
         // add coins
-        var coinGroup = map.getObjectGroup("coin");
-        var coinArray = coinGroup.getObjects();
-        for (var i = 0; i < coinArray.length; i++) {
-            var coin = new Coin(this.spriteSheet,
-                this.space,
-                cc.p(coinArray[i]["x"] + this.mapWidth * mapIndex,coinArray[i]["y"]));
-            coin.mapIndex = mapIndex;
-            this.objects.push(coin);
-        }
-
-        // add rock
-        var rockGroup = map.getObjectGroup("rock");
-        var rockArray = rockGroup.getObjects();
-        for (var i = 0; i < rockArray.length; i++) {
-            var rock = new Rock(this.spriteSheet,
-                this.space,
-                    rockArray[i]["x"] + this.mapWidth * mapIndex);
-            rock.mapIndex = mapIndex;
-            this.objects.push(rock);
-        }
+        //var coinGroup = map.getObjectGroup("coin");
+        //var coinArray = coinGroup.getObjects();
+        //for (var i = 0; i < coinArray.length; i++) {
+        //    var coin = new Coin(this.spriteSheet,
+        //        this.space,
+        //        cc.p(coinArray[i]["x"] + this.mapWidth * mapIndex,coinArray[i]["y"]));
+        //    coin.mapIndex = mapIndex;
+        //    this.objects.push(coin);
+        //}
+        //
+        //// add rock
+        //var rockGroup = map.getObjectGroup("rock");
+        //var rockArray = rockGroup.getObjects();
+        //for (var i = 0; i < rockArray.length; i++) {
+        //    var rock = new Rock(this.spriteSheet,
+        //        this.space,
+        //            rockArray[i]["x"] + this.mapWidth * mapIndex);
+        //    rock.mapIndex = mapIndex;
+        //    this.objects.push(rock);
+        //}
     },
 
     removeObjects:function (mapIndex) {

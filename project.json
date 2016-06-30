@@ -16,14 +16,12 @@
         "src/AnimationLayer.js",
         "src/BackgroundLayer.js",
         "src/MoveableBackgroundLayer.js",
-        "src/Coin.js",
         "src/GameOverLayer.js",
         "src/globals.js",
         "src/MenuLayer.js",
         "src/MenuScene.js",
         "src/PlayScene.js",
         "src/resource.js",
-        "src/Rock.js",
         "src/SimpleRecognizer.js",
         "src/StatusLayer.js"
     ]
